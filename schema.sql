@@ -51,3 +51,23 @@ SELECT premise.id, premise.premise_name, county.county_name
 FROM premise
 INNER JOIN county
 ON premise.county_id = county.county_id;
+
+-- As proof of concet we can create a view to show that everything works.
+
+CREATE OR REPLACE VIEW hours_per_week_sex_region AS
+SELECT
+	country.region
+	, adult.sex
+	, SUM(adult.hours_per_week) AS sub_tot_hours_per_week
+FROM public.adult
+JOIN country USING(native_country)
+GROUP BY
+	country.region
+	, adult.sex
+ORDER BY
+	country.region
+	, adult.sex
+;
+
+-- Query the view from above
+SELECT * FROM hours_per_week_sex_region;
