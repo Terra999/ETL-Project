@@ -1,4 +1,5 @@
-# ETL-Project
+# ETL-Project 
+Contributors: Roberto Pupo; Rylee Nelson; Terra Vaughn
 
 These are the instructions to run our ETL Project for Data Visualization Bootcamp:
 1. Clone specified repository to your local machine.
